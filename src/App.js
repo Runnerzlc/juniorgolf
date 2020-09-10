@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-// eslint-disable-next-line
 import {BrowserRouter, Route} from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-
+import Home from './pages/Home/Home';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +11,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <BrowserRouter>
-          
+          <Route path="/" exact component={Home} />
         </BrowserRouter>
         <Footer />
       </div>
