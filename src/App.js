@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NavBreadcrumb from './components/NavBreadcrumb/NavBreadcrumb'
 import {BrowserRouter, Route} from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -16,6 +17,7 @@ class App extends Component {
       <div className="App">
         <Header/>
         <Navigation/>
+        <NavBreadcrumb/>
         <BrowserRouter>
           <Route path="/" exact component={Home} />
         </BrowserRouter>
