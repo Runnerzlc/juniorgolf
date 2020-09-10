@@ -1,7 +1,7 @@
 import React from 'react';
 import Breadcrumb from 'react-bootstrap/Breadcrumb';
 import "../../styles/NavBreadcrumb.css";
-const navBreadcrumb = () => {
+const NavBreadcrumb = () => {
     const currentUrl = window.location.href;
     const str = currentUrl.split("http://localhost:3000/")[1];
     const locationArray = str.split("/");
@@ -33,4 +33,4 @@ const navBreadcrumb = () => {
         </div>
     );
 }
-export default navBreadcrumb;
+export default NavBreadcrumb;
