@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Carousel, Card, Container, Row, Col, Image } from 'react-bootstrap';
 import ReactPlayer from 'react-player'
 import { storage } from '../../firebase';
+import { textArray } from '../../assets/HomeText';
 import '../../styles/Home.css';
 
 const Home = () => {
@@ -21,7 +22,7 @@ const Home = () => {
   }
 
   const getHomeVideo = async () => {
-    const videoRefs = await storageRef.child('videos').listAll();
+    const videoRefs = await storageRef.child('videos/Home').listAll();
     const videoName = videoRefs.items[0].location.path;
     const videoUrl = await storageRef.child(videoName).getDownloadURL();
     setHomeVideoUrl(videoUrl);
@@ -36,7 +37,6 @@ const Home = () => {
   const leftArrow = <div className="carousel-arrow"><i class="fas fa-angle-left fa-5x" /></div>;
   const rightArrow = <div className="carousel-arrow"><i class="fas fa-angle-right fa-5x" /></div>;
 
-  console.log(homeVideoUrl);
   return (
     <div>
       <Carousel nextIcon={rightArrow} prevIcon={leftArrow}>
@@ -46,10 +46,8 @@ const Home = () => {
               <Carousel.Item interval={1000} key={index}>
                 <img
                   id="carousel-image"
-                  className="w-100"
                   src={imageUrl}
                   alt="First slide"
-                  height="300"
                 />
               </Carousel.Item>
             )
@@ -60,9 +58,15 @@ const Home = () => {
         <Card style={{ width: '50rem' }} className="card">
           <Card.Body>
             <Card.Title className="card-title">Message</Card.Title>
-            <Card.Text>
-            Founder’s Message My name is Michael Chang, and I am the founder of this organization.
-            </Card.Text>
+            {
+              textArray.map((text, index) => {
+                return (
+                  <Card.Text key={index}>
+                    {text}
+                  </Card.Text>
+                )
+              })
+            }
           </Card.Body>
         </Card>
         <ReactPlayer 
