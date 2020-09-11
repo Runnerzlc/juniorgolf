@@ -10,6 +10,8 @@ import Home from './pages/Home/Home';
 import AboutUs from './pages/About/AboutUs';
 import ContactUs from './pages/About/ContactUs';
 import Clinics from './pages/Clinics/Clinics';
+import Stretching from './pages/Prevention/Stretching';
+import Strengthening from './pages/Prevention/Strengthening';
 import Coach from './pages/Team/Coach';
 import Advisor from './pages/Team/Advisor';
 import Message from './pages/Message/Message';
@@ -28,6 +30,8 @@ const App = () => {
           <Route path="/about_us" exact component={AboutUs} />
           <Route path="/contact_us" exact component={ContactUs} />
           <Route path="/clinics" exact component={Clinics} />
+          <Route path="/stretching" exact component={Stretching} />
+          <Route path="/strengthening" exact component={Strengthening} />
           <Route path="/coach" exact component={Coach} />
           <Route path="/advisor" exact component={Advisor} />
           <Route path="/message" exact component={Message} />
