@@ -33,11 +33,11 @@ const Home = () => {
     });
   }
 
-  // useEffect(() => {
-  //   getImageUrl();
-  //   getHomeVideo();
-  //   // eslint-disable-next-line
-  // }, []);
+  useEffect(() => {
+    getImageUrl();
+    getHomeVideo();
+    // eslint-disable-next-line
+  }, []);
 
   const leftArrow = <div className="carousel-arrow"><i class="fas fa-angle-left fa-5x" /></div>;
   const rightArrow = <div className="carousel-arrow"><i class="fas fa-angle-right fa-5x" /></div>;
