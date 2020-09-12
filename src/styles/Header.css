@@ -1,12 +1,13 @@
 .icon {
     color: 	#f7f7f7;
-    padding-left: 10px;
+    padding-left: 20%;
     font-size: small;
 }
 
 .text-primary {
     padding-left: 3px;
     font-size: small;
+    padding-right: 10px;
 }
 
 .text-sec {

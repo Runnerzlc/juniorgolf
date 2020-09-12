@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel, Card, Container, Row, Col, Image } from 'react-bootstrap';
+import { Carousel, Card } from 'react-bootstrap';
+import Gallery from '../../components/Gallery/Gallery';
 import ReactPlayer from 'react-player';
 import { storage } from '../../firebase';
 import { textArray } from '../../assets/HomeText';
 import '../../styles/Home.css';
-import Gallery from '../../components/Gallery/Gallery';
 
 const Home = () => {
   const [imageUrls, setImageUrls] = useState([]);

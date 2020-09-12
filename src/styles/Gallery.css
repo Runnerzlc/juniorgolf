@@ -87,6 +87,7 @@
 }
 .box__center {
   z-index: -1;
+  /* object-fit: cover; */
 }
 
 i {
