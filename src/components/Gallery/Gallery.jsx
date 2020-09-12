@@ -34,7 +34,8 @@ const Gallery = () => {
     1800: { items: 4 },
   };
   const style = {
-    backgroundImage: `url(${backgroud})`,
+		backgroundImage: `url(${backgroud})`,
+		"margin-bottom": '10%'
   };
   const stagePadding = {
     paddingLeft: "auto",
