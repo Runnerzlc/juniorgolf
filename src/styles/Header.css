@@ -2,6 +2,8 @@
     color: 	#f7f7f7;
     padding-left: 20%;
     font-size: small;
+    width: 25px;
+    height: 25px;
 }
 
 .text-primary {
@@ -14,7 +16,7 @@
     font-size: small;
 }
 
-.nav {
+.navi {
     height: 30px;
 }
 

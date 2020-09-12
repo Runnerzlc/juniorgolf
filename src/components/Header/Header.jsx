@@ -1,22 +1,26 @@
 import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Nav } from 'react-bootstrap';
 import '../../styles/Header.css';
-
+import {ReactComponent as Reactmail} from "../../assets/mail.svg";
+import {ReactComponent as Reactphone} from "../../assets/phone.svg";
 
 const Header = () => {
   return (
     <div>
-      <Navbar bg="dark" className="nav">
-        <Navbar.Text className="text-light offset-md-2 text-sec">Welcome to www.juniorgolf4fun.org</Navbar.Text>
-        <Navbar.Text className="offset-lg-4 header-text">
-            {/* <i class="fas fa-phone icon"></i> */}
-            <a href="tel: 206-566-9216" className="text-primary">206-566-9216</a>
-        </Navbar.Text>
-        <Navbar.Text className="header-text">
-          {/* <i class="far fa-envelope icon" ></i> */}
-          <a href="mailto:m.chang1227@gmail.com" className="text-primary" >m.chang1227@gmail.coms</a> 
-        </Navbar.Text>
-      </Navbar>  
+      <Navbar bg="dark" className="navi">
+        <Navbar.Text className="text-light offset-lg-2 text-sec">Welcome to www.juniorgolf4fun.org</Navbar.Text>
+        <Nav className="offset-lg-4">
+          <Navbar.Text>
+            <Reactphone className="icon"/>
+            <a href="tel: 206-566-9216" className="text-primary" > 206-566-9216 </a>
+          </Navbar.Text>
+          <Navbar.Text >
+            <Reactmail className="icon"/>
+            <a href="mailto:m.chang1227@gmail.com" className="text-primary" > m.chang1227@gmail.coms</a>
+          </Navbar.Text>
+        </Nav>
+
+      </Navbar>
     </div>
   );
 }
