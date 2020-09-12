@@ -1,22 +1,38 @@
 .footer {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
   background-color: #34495e;
-  padding-top: 10px;
-  
 }
 
-.footer p {
+.footer-contact {
   color: #ffffff;
-  font-size: small;
+  height: 250px;
+  width: 50%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin: auto;
+  line-height: 35px;
+  display: flex;
+  justify-content: space-around;
+}
 
+.footer-title {
+  color: rgba(9, 132, 227,1.0);
+  font-size: larger;
+}
+
+.footer-image {
+  object-fit: cover;
 }
 
 .copyright {
   background-color: #ffffff;
   font-size: small;
-  line-height: 35px;
+  line-height: 50px;
   color: black;
+  text-align: center;
 }
 
+@media only screen and (max-width: 768px) {
+  .copyright {
+    font-size: small;
+  }
+}

@@ -1,3 +1,18 @@
 .logo {
-    margin-right: 5%;
+  margin-right: 5%;
+}
+
+.nav-all {
+	width: 80%;
+}
+
+.nav-item {
+	margin-right: 2%;
+	font-size: small;
+	font-weight: bold;
+}
+
+.nav-dropitem {
+	font-size: small;
+	font-weight: bold;
 }
