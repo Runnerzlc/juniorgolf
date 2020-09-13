@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import Container from "react-bootstrap/Container";
-import backgroud from "../../assets/newyork.jpg";
 import AliceCarousel from "react-alice-carousel";
 import { storage } from '../../firebase';
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -32,11 +31,8 @@ const Gallery = () => {
     600: { items: 2 },
     1200: { items: 3 },
     1800: { items: 4 },
-  };
-  const style = {
-		backgroundImage: `url(${backgroud})`,
-		"margin-bottom": '10%'
-  };
+	};
+	
   const stagePadding = {
     paddingLeft: "auto",
     paddingRight: "auto",
@@ -65,7 +61,7 @@ const Gallery = () => {
     }),
   };
   return (
-    <Container fluid style={style}>
+    <Container fluid className="gallery-container">
       <AliceCarousel
         mouseTrackingEnabled
         responsive={responsive}
