@@ -18,8 +18,31 @@
 }
 
 /* .home-content {
-  
+  width: 100%;
+}
+
+.home-content::before {
+  content: "";
+  background-image: url(https://images.pexels.com/photos/54123/pexels-photo-54123.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+  background-size: cover;
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: -1;
 } */
+
+.spinner-container {
+  width: 100%;
+  height: 300px;
+}
+
+.home-image-spinner {
+  line-height: 300px;
+  text-align: center;
+}
 
 .home-card {
   margin-left: auto;

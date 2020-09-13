@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel, Card } from 'react-bootstrap';
+import { Carousel, Card, Spinner } from 'react-bootstrap';
 import Gallery from '../../components/Gallery/Gallery';
 import ReactPlayer from 'react-player';
 import { storage } from '../../firebase';
@@ -44,6 +44,15 @@ const Home = () => {
 
   return (
     <div className="home-content">
+    {
+      imageUrls.length === 0 ?
+      <div className="spinner-container">
+        <div className="home-image-spinner">
+          <Spinner animation="border" role="status" >
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
+      </div> :
       <Carousel nextIcon={rightArrow} prevIcon={leftArrow}>
         {
           imageUrls.map((imageUrl, index) => {
@@ -59,6 +68,7 @@ const Home = () => {
           })
         }
       </Carousel>
+    }
       <div className="card-video">
         <Card className="home-card">
           <Card.Body>
