@@ -4,7 +4,6 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Navigation from './components/Navigation/Navigation';
-// import ContactCard from './components/ContactCard/ContactCard';
 
 import Home from './pages/Home/Home';
 import AboutUs from './pages/About/AboutUs';

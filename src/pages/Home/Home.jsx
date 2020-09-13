@@ -43,7 +43,7 @@ const Home = () => {
   const rightArrow = <div className="carousel-arrow"><i class="fas fa-angle-right fa-5x" /></div>;
 
   return (
-    <div>
+    <div className="home-content">
       <Carousel nextIcon={rightArrow} prevIcon={leftArrow}>
         {
           imageUrls.map((imageUrl, index) => {

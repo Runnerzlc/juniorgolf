@@ -1,5 +1,5 @@
 .footer {
-  background-color: #34495e;
+  background-color: rgba(72, 84, 96,1.0);
 }
 
 .footer-contact {
@@ -15,8 +15,12 @@
 }
 
 .footer-title {
-  color: rgba(9, 132, 227,1.0);
+  color: rgba(126, 214, 223,1.0);
   font-size: larger;
+}
+
+.footer-text {
+  font-size: 14px;
 }
 
 .footer-image {
@@ -29,6 +33,13 @@
   line-height: 50px;
   color: black;
   text-align: center;
+}
+
+.footer-svg {
+  color: 	rgba(236, 240, 241,1.0);
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 768px) {

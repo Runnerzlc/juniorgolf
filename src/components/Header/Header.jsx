@@ -11,12 +11,12 @@ const Header = () => {
         <Navbar.Text className="text-light offset-lg-2 text-sec">Welcome to www.juniorgolf4fun.org</Navbar.Text>
         <Nav className="offset-lg-4">
           <Navbar.Text>
-            <Reactphone className="icon"/>
-            <a href="tel: 206-566-9216" className="text-primary" > 206-566-9216 </a>
+            <Reactphone className="header-icon"/>
+            <a href="tel: 206-566-9216" className="text-primary header-contact" > 206-566-9216 </a>
           </Navbar.Text>
           <Navbar.Text >
-            <Reactmail className="icon"/>
-            <a href="mailto:m.chang1227@gmail.com" className="text-primary" > m.chang1227@gmail.coms</a>
+            <Reactmail className="header-icon"/>
+            <a href="mailto:m.chang1227@gmail.com" className="text-primary header-contact" > m.chang1227@gmail.coms</a>
           </Navbar.Text>
         </Nav>
 
