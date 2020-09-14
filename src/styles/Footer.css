@@ -1,5 +1,5 @@
 .footer {
-  background-color: rgba(72, 84, 96,1.0);
+  background-color: #485460;
 }
 
 .footer-contact {
@@ -15,7 +15,7 @@
 }
 
 .footer-title {
-  color: rgba(126, 214, 223,1.0);
+  color: #1e90ff;
   font-size: larger;
 }
 

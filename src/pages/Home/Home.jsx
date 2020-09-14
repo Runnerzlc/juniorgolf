@@ -5,6 +5,7 @@ import ReactPlayer from 'react-player';
 import { storage } from '../../firebase';
 import { textArray } from '../../assets/HomeText';
 import '../../styles/Home.css';
+import HomeImage from '../../assets/Home.jpg';
 
 const Home = () => {
   const [imageUrls, setImageUrls] = useState([]);
@@ -42,8 +43,12 @@ const Home = () => {
   const leftArrow = <div className="carousel-arrow"><i class="fas fa-angle-left fa-5x" /></div>;
   const rightArrow = <div className="carousel-arrow"><i class="fas fa-angle-right fa-5x" /></div>;
 
+  const style = {
+    "background-image": `url(${HomeImage})`
+  };
+
   return (
-    <div className="home-content">
+    <div className="home-content" style={style}>
     {
       imageUrls.length === 0 ?
       <div className="spinner-container">
