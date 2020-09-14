@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Navbar, NavDropdown, Nav, Image } from "react-bootstrap";
 import Logo from "../../assets/logo.png";
 import '../../styles/Navigation.css';
 
 const Navigation = () => {
+  const [shrinkNav, setShrinkNav] = useState(false);
+  const navigationRef = useRef();
+
+  const memoScrollWrapper = () => {
+    const currentHeight = navigationRef.current.getBoundingClientRect().top;
+    setShrinkNav(currentHeight === 0);
+  }
+
+  useEffect(() => {
+    console.log(navigationRef);
+    window.addEventListener('scroll', memoScrollWrapper);
+    return () => {
+      window.removeEventListener('scroll', memoScrollWrapper);
+    }
+  }, []);
+
+  const style = {
+    height: shrinkNav ? "20" : "100"
+  };
+
   return (
-    <div className="sticky-top">
+    <div className="sticky-top" id="unique" style={style} ref={navigationRef}>
       <Navbar bg="light" expand="lg">
-        <Nav.Link href="/" className="offset-xl-2 logo">
-          <Image src={Logo} width="80%" height="80%" />
+        <Nav.Link href="/" className="offset-xl-2 nav-logo">
+          <Image 
+            src={Logo}
+            width={shrinkNav ? "40%" : "80%"}
+            height={shrinkNav ? "40%" : "80%"}
+          />
         </Nav.Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse expand="xl" id="basic-navbar-nav">

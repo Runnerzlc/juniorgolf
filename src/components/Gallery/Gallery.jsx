@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-
+import { Row } from 'react-bootstrap';
 import Container from "react-bootstrap/Container";
 import AliceCarousel from "react-alice-carousel";
 import { storage } from '../../firebase';
 import "react-alice-carousel/lib/alice-carousel.css";
+import GallaryImage from '../../assets/Home_Gallery.jpg';
 import "../../styles/Gallery.css";
 
 const Gallery = () => {
@@ -36,7 +37,13 @@ const Gallery = () => {
   const stagePadding = {
     paddingLeft: "auto",
     paddingRight: "auto",
-  };
+	};
+
+	const style = {
+		"background-image": `url(${GallaryImage})`,
+		"object-fit": "scale-down"
+	};
+	
   const state = {
     items: imageUrls.map((url, index) => {
       return (
@@ -61,18 +68,21 @@ const Gallery = () => {
     }),
   };
   return (
-    <Container fluid className="gallery-container">
-      <AliceCarousel
-        mouseTrackingEnabled
-        responsive={responsive}
-        items={state.items}
-        startIndex={10}
-        dotsDisabled={true}
-        autoPlayInterval={2000}
-        autoPlay
-        buttonsDisabled={true}
-        stagePadding={stagePadding}
-      ></AliceCarousel>
+    <Container fluid className="gallery-container" style={style}>
+			<Row>
+				<div className="col-lg-10 offset-lg-1">
+					<AliceCarousel
+						mouseTrackingEnabled
+						responsive={responsive}
+						items={state.items}
+						dotsDisabled
+						autoPlayInterval={2000}
+						autoPlay
+						buttonsDisabled
+						stagePadding={stagePadding}
+					/>
+				</div>
+			</Row>
     </Container>
   );
 };

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel, Card } from 'react-bootstrap';
+import { Carousel, Card, Spinner } from 'react-bootstrap';
 import Gallery from '../../components/Gallery/Gallery';
 import ReactPlayer from 'react-player';
 import { storage } from '../../firebase';
 import { textArray } from '../../assets/HomeText';
 import '../../styles/Home.css';
+import HomeImage from '../../assets/Home.jpg';
 
 const Home = () => {
   const [imageUrls, setImageUrls] = useState([]);
@@ -42,8 +43,21 @@ const Home = () => {
   const leftArrow = <div className="carousel-arrow"><i class="fas fa-angle-left fa-5x" /></div>;
   const rightArrow = <div className="carousel-arrow"><i class="fas fa-angle-right fa-5x" /></div>;
 
+  const style = {
+    "background-image": `url(${HomeImage})`
+  };
+
   return (
-    <div className="home-content">
+    <div className="home-content" style={style}>
+    {
+      imageUrls.length === 0 ?
+      <div className="spinner-container">
+        <div className="home-image-spinner">
+          <Spinner animation="border" role="status" >
+            <span className="sr-only">Loading...</span>
+          </Spinner>
+        </div>
+      </div> :
       <Carousel nextIcon={rightArrow} prevIcon={leftArrow}>
         {
           imageUrls.map((imageUrl, index) => {
@@ -59,6 +73,7 @@ const Home = () => {
           })
         }
       </Carousel>
+    }
       <div className="card-video">
         <Card className="home-card">
           <Card.Body>
