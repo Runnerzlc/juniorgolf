@@ -27,6 +27,14 @@
   text-align: center;
 }
 
+.home-image-text {
+  position: absolute;
+  left: 20%;
+  top: 75%;
+  font-size: 50px;
+  color: white;
+}
+
 .home-card {
   background: transparent;
   margin-left: auto;
@@ -41,6 +49,10 @@
   text-align: center;
   font-size: 30px;
   color: #0984e3;
+}
+
+.card-text {
+  font-size: 20px;
 }
 
 .video-section {
