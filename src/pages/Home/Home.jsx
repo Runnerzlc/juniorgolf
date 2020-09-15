@@ -3,7 +3,7 @@ import { Carousel, Card, Spinner } from 'react-bootstrap';
 import Gallery from '../../components/Gallery/Gallery';
 import ReactPlayer from 'react-player';
 import { storage } from '../../firebase';
-import { textArray } from '../../assets/HomeText';
+import { textArray, imageTextArray } from '../../assets/HomeText';
 import '../../styles/Home.css';
 import HomeImage from '../../assets/Home.jpg';
 
@@ -68,6 +68,9 @@ const Home = () => {
                   src={imageUrl}
                   alt="First slide"
                 />
+                <div className="home-image-text">
+                  {imageTextArray[index]}
+                </div>
               </Carousel.Item>
             )
           })
@@ -77,11 +80,13 @@ const Home = () => {
       <div className="card-video">
         <Card className="home-card">
           <Card.Body>
-            <Card.Title className="card-title">Message</Card.Title>
+            <Card.Title className="card-title">
+              Junior Golf for Fun Overview
+            </Card.Title>
             {
               textArray.map((text, index) => {
                 return (
-                  <Card.Text key={index}>
+                  <Card.Text  className="card-text" key={index}>
                     {text}
                   </Card.Text>
                 )

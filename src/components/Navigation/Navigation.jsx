@@ -13,7 +13,6 @@ const Navigation = () => {
   }
 
   useEffect(() => {
-    console.log(navigationRef);
     window.addEventListener('scroll', memoScrollWrapper);
     return () => {
       window.removeEventListener('scroll', memoScrollWrapper);
@@ -42,6 +41,7 @@ const Navigation = () => {
               <NavDropdown.Item href="about_us" className="nav-dropitem">About us</NavDropdown.Item>
               <NavDropdown.Item href="contact_us" className="nav-dropitem">Contact us</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link href="message" className="nav-item">FOUNDER'S MESSAGE</Nav.Link>
             <Nav.Link href="clinics" className="nav-item">GOLF CLINICS</Nav.Link>
             <NavDropdown title="INJURY PREVENTION" id="basic-nav-dropdown" className="nav-item">
               <NavDropdown.Item href="stretching" className="nav-dropitem">Stretching</NavDropdown.Item>
@@ -51,8 +51,7 @@ const Navigation = () => {
               <NavDropdown.Item href="coach" className="nav-dropitem">Coaching Team</NavDropdown.Item>
               <NavDropdown.Item href="advisor" className="nav-dropitem">Advisors</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href="message" className="nav-item">FOUNDER'S MESSAGE</Nav.Link>
-            <Nav.Link href="partners" className="nav-item">PARTNER</Nav.Link>
+            <Nav.Link href="partners" className="nav-item">PARTNERS</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
