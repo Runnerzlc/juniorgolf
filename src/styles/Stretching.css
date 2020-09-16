@@ -31,9 +31,9 @@
   height: 20px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 450px) {
   /* For mobile screen: */
   .stretching-block {
-    margin-bottom: 25%;
+    margin-bottom: 30%;
   }
 }
