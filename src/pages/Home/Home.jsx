@@ -98,7 +98,8 @@ const Home = () => {
           {
             homeVideoUrls.map((homeVideoUrl, index) => {
               return (
-                <ReactPlayer 
+                <ReactPlayer
+                  key={index}
                   url={homeVideoUrl}
                   playing
                   controls={true}
