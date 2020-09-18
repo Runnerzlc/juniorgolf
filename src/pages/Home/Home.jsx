@@ -62,7 +62,7 @@ const Home = () => {
         {
           imageUrls.map((imageUrl, index) => {
             return (
-              <Carousel.Item interval={1000} key={index} className="home-carousel-image">
+              <Carousel.Item interval={1000} key={index}>
                 <img
                   id="carousel-image"
                   src={imageUrl}
@@ -98,7 +98,8 @@ const Home = () => {
           {
             homeVideoUrls.map((homeVideoUrl, index) => {
               return (
-                <ReactPlayer 
+                <ReactPlayer
+                  key={index}
                   url={homeVideoUrl}
                   playing
                   controls={true}
