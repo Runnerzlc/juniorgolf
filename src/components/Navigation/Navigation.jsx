@@ -13,9 +13,11 @@ const Navigation = () => {
   }
 
   useEffect(() => {
-    window.addEventListener('scroll', memoScrollWrapper);
-    return () => {
-      window.removeEventListener('scroll', memoScrollWrapper);
+    if (window.screen.width >= 500) {
+      window.addEventListener('scroll', memoScrollWrapper);
+      return () => {
+        window.removeEventListener('scroll', memoScrollWrapper);
+      }
     }
   }, []);
 

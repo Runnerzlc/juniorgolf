@@ -5,14 +5,18 @@ import { storage } from '../../firebase';
 import '../../styles/About.css';
 
 const AboutUs = () => {
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrls, setImageUrls] = useState([]);
   const storageRef = storage.ref();
 
   const getImageUrl = async () => {
-    const imageRef = await storageRef.child('about').listAll();
-    const imageName = imageRef.items[0].location.path;
-    const url = await storageRef.child(imageName).getDownloadURL();
-    setImageUrl(url);
+    const imageRefs = await storageRef.child('about').listAll();
+    const imageNames = imageRefs.items.map(item => item.location.path);
+    const urlPromises = imageNames.map(name => {
+      return storageRef.child(name).getDownloadURL();
+    });
+    Promise.all(urlPromises).then(values => {
+      setImageUrls(values);
+    });
   }
 
   useEffect(() => {
@@ -43,12 +47,21 @@ const AboutUs = () => {
               })
             }
             {
-              imageUrl ?
-              <Image
-                src={imageUrl}
-                width="100%"
-                className="about-image" 
-              /> :
+              imageUrls.length > 0 ?
+              <div>
+              {
+                imageUrls.map((imageUrl, index) => {
+                  return (
+                    <Image
+                      key={index}
+                      src={imageUrl}
+                      width="100%"
+                      className="about-image" 
+                    /> 
+                  )
+                })
+              }
+              </div> :
               <div className="about-spinner">
                 <Spinner animation="border" role="status" >
                   <span className="sr-only">Loading...</span>

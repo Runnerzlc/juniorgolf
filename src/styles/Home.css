@@ -72,8 +72,9 @@
   .home-card {
     width: 80%;
   }
-  .home-carousel-image{
+  #carousel-image {
     width: 100%;
     height: 250px;
+    object-fit: cover;
   }
 }
